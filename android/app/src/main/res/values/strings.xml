@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">EdgeVision</string>
+    <string name="permission_rationale">Camera access is required to stream frames into OpenCV.</string>
+    <string name="mode_edge">Edge</string>
+    <string name="mode_raw">Raw</string>
+</resources>

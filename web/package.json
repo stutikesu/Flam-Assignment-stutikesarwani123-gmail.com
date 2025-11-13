@@ -1,0 +1,20 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc && copyfiles -u 1 public/**/* dist",
+    "dev": "npm run build -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "TypeScript web viewer for edge detection debug UI",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.9.3"
+  }
+}
+

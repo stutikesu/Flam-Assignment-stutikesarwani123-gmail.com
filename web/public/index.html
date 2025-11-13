@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edge Debug Viewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="viewer">
+      <section class="frame-panel">
+        <div class="frame-container">
+          <img id="framePreview" alt="Processed frame" />
+          <div class="frame-overlay" id="frameOverlay">
+            <p><strong>Mode:</strong> <span id="modeLabel">Edge</span></p>
+            <p><strong>Frame #</strong> <span id="frameId">0</span></p>
+          </div>
+        </div>
+      </section>
+      <section class="control-panel">
+        <h1>Native Frame Bridge</h1>
+        <p class="subtitle">Quick web hook-up to inspect JNI processed frames.</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <p>FPS</p>
+            <strong id="fpsLabel">0</strong>
+          </div>
+          <div class="stat-card">
+            <p>Resolution</p>
+            <strong id="resolutionLabel">0 x 0</strong>
+          </div>
+          <div class="stat-card">
+            <p>Format</p>
+            <strong id="formatLabel">RGBA</strong>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="frameInput">Paste base64 frame payload</label>
+          <textarea id="frameInput" rows="4" placeholder="data:image/png;base64,..."></textarea>
+          <button id="applyFrame">Render frame</button>
+        </div>
+
+        <div class="control-group">
+          <label for="frameFile">Or drop an image exported from Android</label>
+          <input type="file" id="frameFile" accept="image/*" />
+        </div>
+
+        <div class="control-group dropzone" id="dropZone">
+          <p>Drop frame image here</p>
+        </div>
+
+        <div class="control-group inline">
+          <button id="toggleMode">Toggle Mode</button>
+          <button id="simulateStream">Simulate next frame</button>
+        </div>
+
+        <div class="log" id="log"></div>
+      </section>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
